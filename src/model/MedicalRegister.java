@@ -9,6 +9,7 @@ import dao.interfaces.MedicalRegisterDao;
 import dao.interfaces.PatientDao;
 import daoFactory.DaoFactory;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -16,12 +17,15 @@ import java.sql.SQLException;
  */
 public class MedicalRegister {
     private Long id = null;
-    private Long idPatient;
-    private Long idClinic;
+    private Patient patient;
+    private Clinic clinic;
 
-    public MedicalRegister(Long idPatient, Long idClinic) {
-        this.idPatient = idPatient;
-        this.idClinic = idClinic;
+    public MedicalRegister() {
+    }
+    
+    public MedicalRegister(Patient patient, Clinic clinic) {
+        this.patient = patient;
+        this.clinic = clinic;
     }
 
     public Long getId() {
@@ -32,22 +36,37 @@ public class MedicalRegister {
         this.id = id;
     }
 
-    public Long getIdPatient() {
-        return idPatient;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setIdPatient(Long idPatient) {
-        this.idPatient = idPatient;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public Long getIdClinic() {
-        return idClinic;
+    public Clinic getClinic() {
+        return clinic;
     }
 
-    public void setIdClinic(Long idClinic) {
-        this.idClinic = idClinic;
+    public void setClinic(Clinic clinic) {
+        this.clinic = clinic;
     }
     
+    public String[] toArray(){
+        return new String[] {
+            this.patient.getName(),
+            this.patient.getAge(),
+            this.patient.getPhone(),
+            this.patient.getAddress(),
+            this.clinic.getName(),
+            this.clinic.getRoom(),
+            this.clinic.getType()
+        };
+    }
+
+    public static List<MedicalRegister> all() throws SQLException {
+        return medicalRegisterDAO().all();
+    }
     public void save() throws SQLException{
         medicalRegisterDAO().insert(this);
     }

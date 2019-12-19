@@ -6,6 +6,7 @@
 package dao.interfaces;
 
 import java.sql.SQLException;
+import java.util.List;
 import model.MedicalRegister;
 
 /**
@@ -13,5 +14,6 @@ import model.MedicalRegister;
  * @author sonnt
  */
 public interface MedicalRegisterDao {
+    List<MedicalRegister> all() throws SQLException;
     MedicalRegister insert(MedicalRegister object) throws SQLException;
 }

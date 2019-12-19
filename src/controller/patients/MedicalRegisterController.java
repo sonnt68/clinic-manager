@@ -6,6 +6,7 @@
 package controller.patients;
 
 import java.sql.SQLException;
+import java.util.List;
 import model.MedicalRegister;
 
 /**
@@ -19,6 +20,10 @@ public class MedicalRegisterController {
     
     public static MedicalRegisterController getInstance() {
         return instance;
+    }
+    
+    public List<MedicalRegister> allMedicalRegister() throws SQLException{
+        return MedicalRegister.all();
     }
     
     public MedicalRegister save(MedicalRegister medicalRegister) throws SQLException {

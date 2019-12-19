@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Clinic;
+import model.Doctor;
+import model.Examination;
 import model.Patient;
 
 /**
@@ -68,20 +70,32 @@ public class SelectClinic extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Tên", "Phòng", "Loại"
+                "ID", "Tên", "Phòng", "Loại", "Giờ bắt đầu", "Giờ kết thúc", "Tên bác sỹ", "id bác sỹ"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         jScrollPane1.setViewportView(tblClinic);
 
         btnCancel.setText("Huỷ");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnContinue.setText("Tiếp tục");
         btnContinue.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +220,18 @@ public class SelectClinic extends javax.swing.JFrame {
             String name = tblClinic.getModel().getValueAt(row, 1).toString();
             String room = tblClinic.getModel().getValueAt(row, 2).toString();
             String type = tblClinic.getModel().getValueAt(row, 3).toString();
-            Clinic clinicSelected = new Clinic(name, room, type);
+            String startTime = tblClinic.getModel().getValueAt(row, 4).toString();
+            String endTime = tblClinic.getModel().getValueAt(row, 5).toString();
+            String doctorName = tblClinic.getModel().getValueAt(row, 6).toString();
+            Long idDoctor = Long.parseLong(tblClinic.getModel().getValueAt(row, 7).toString());
+
+            Examination examination = new Examination();
+            examination.setStartTime(startTime);
+            examination.setEndTime(endTime);
+            Doctor doctor = new Doctor(idDoctor, doctorName);
+            examination.setDoctor(doctor);
+            
+            Clinic clinicSelected = new Clinic(name, room, type, examination);
             clinicSelected.setId(id);
             ConfirmRegistration.showConfirmation(patient, clinicSelected);
             setVisible(false);
@@ -216,6 +241,10 @@ public class SelectClinic extends javax.swing.JFrame {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments

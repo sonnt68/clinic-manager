@@ -5,13 +5,13 @@
  */
 package main;
 
-import view.SearchPatient;
+import view.Home;
 /**
  *
  * @author sonnt
  */
 public class Main {
     public static void main(String[] args) {
-        SearchPatient.createAndShowGUI();
+        Home.createAndShowGUI();
     }
 }

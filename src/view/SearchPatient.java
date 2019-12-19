@@ -189,7 +189,7 @@ public final class SearchPatient extends javax.swing.JFrame {
     }
     
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -216,7 +216,7 @@ public final class SearchPatient extends javax.swing.JFrame {
             String name = tblPatient.getModel().getValueAt(row, 1).toString();
             String age = tblPatient.getModel().getValueAt(row, 2).toString();
             String address = tblPatient.getModel().getValueAt(row, 3).toString();
-            String phone = tblPatient.getModel().getValueAt(row, 3).toString();
+            String phone = tblPatient.getModel().getValueAt(row, 4).toString();
             Patient patientSelected = new Patient(name, age, address, phone);
             patientSelected.setId(id);
             SelectClinic.showClinic(patientSelected);

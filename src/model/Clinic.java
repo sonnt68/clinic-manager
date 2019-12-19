@@ -19,11 +19,16 @@ public class Clinic {
     private String name;
     private String room;
     private String type;
+    private Examination examination;
 
-    public Clinic(String name, String room, String type) {
+    public Clinic(String name, String room, String type, Examination examination) {
         this.name = name;
         this.room = room;
         this.type = type;
+        this.examination = examination;
+    }
+    
+    public Clinic() {
     }
 
     public Long getId() {
@@ -57,8 +62,27 @@ public class Clinic {
     public void setType(String type) {
         this.type = type;
     }
+
+    public Examination getExamination() {
+        return examination;
+    }
+
+    public void setExamination(Examination examination) {
+        this.examination = examination;
+    }
+
+    
     public String[] toArray(){
-        return new String[] {this.id.toString(), this.name, this.room, this.type};
+        return new String[] {
+            this.id.toString(),
+            this.name,
+            this.room,
+            this.type,
+            this.examination.getStartTime(),
+            this.examination.getEndTime(),
+            this.examination.getDoctor().getDoctorName(),
+            this.examination.getDoctor().getId().toString()
+        };
     }
     public static List<Clinic> all() throws SQLException {
         return clinicDAO().all();

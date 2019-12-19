@@ -151,15 +151,39 @@
             <Component class="javax.swing.JTable" name="tblClinic">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="0">
-                    <Column editable="true" title="ID" type="java.lang.String"/>
-                    <Column editable="true" title="T&#xea;n" type="java.lang.String"/>
-                    <Column editable="true" title="Ph&#xf2;ng" type="java.lang.String"/>
-                    <Column editable="true" title="Lo&#x1ea1;i" type="java.lang.String"/>
+                  <Table columnCount="8" rowCount="0">
+                    <Column editable="false" title="ID" type="java.lang.String"/>
+                    <Column editable="false" title="T&#xea;n" type="java.lang.String"/>
+                    <Column editable="false" title="Ph&#xf2;ng" type="java.lang.String"/>
+                    <Column editable="false" title="Lo&#x1ea1;i" type="java.lang.String"/>
+                    <Column editable="false" title="Gi&#x1edd; b&#x1eaf;t &#x111;&#x1ea7;u" type="java.lang.String"/>
+                    <Column editable="false" title="Gi&#x1edd; k&#x1ebf;t th&#xfa;c" type="java.lang.String"/>
+                    <Column editable="false" title="T&#xea;n b&#xe1;c s&#x1ef9;" type="java.lang.String"/>
+                    <Column editable="false" title="id b&#xe1;c s&#x1ef9;" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -193,6 +217,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Hu&#x1ef7;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnContinue">
           <Properties>

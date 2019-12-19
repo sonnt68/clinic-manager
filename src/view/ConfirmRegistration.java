@@ -57,6 +57,12 @@ public class ConfirmRegistration extends javax.swing.JFrame {
         btnConfirm = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        startTime = new javax.swing.JLabel();
+        endTime = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        doctorName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -122,6 +128,18 @@ public class ConfirmRegistration extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Giờ bắt đầu:");
+
+        jLabel5.setText("Giờ kết thúc:");
+
+        startTime.setText("startTime");
+
+        endTime.setText("endTime");
+
+        jLabel7.setText("Bác sỹ:");
+
+        doctorName.setText("doctorName");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,49 +149,59 @@ public class ConfirmRegistration extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(233, Short.MAX_VALUE)
+                .addContainerGap(183, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnCancel)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnBack)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConfirm)
+                        .addGap(198, 198, 198))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel8)
                             .addComponent(jLabel6)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel12))
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnCancel)
-                        .addGap(1, 1, 1)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRoom)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtPatientName)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel7))
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAddress)
+                            .addComponent(txtPhone)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel14))
-                                .addGap(24, 24, 24)
+                                    .addComponent(txtPatientName)
+                                    .addComponent(doctorName)
+                                    .addComponent(txtRoom)
+                                    .addComponent(txtClinicName))
+                                .addGap(106, 106, 106)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtType)
-                                    .addComponent(txtAge)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnBack)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnConfirm))))
-                    .addComponent(txtAddress)
-                    .addComponent(txtPhone)
-                    .addComponent(txtClinicName))
-                .addGap(196, 196, 196))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(txtAge))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(txtType))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel5))
+                                        .addGap(39, 39, 39)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(startTime)
+                                            .addComponent(endTime))))))
+                        .addGap(126, 126, 126))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPatientName)
@@ -188,21 +216,37 @@ public class ConfirmRegistration extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(txtPhone))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtClinicName))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtRoom)
-                    .addComponent(jLabel14)
-                    .addComponent(txtType))
-                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtClinicName))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(txtRoom))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(doctorName)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(txtType))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(startTime))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(endTime))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirm)
                     .addComponent(btnCancel)
                     .addComponent(btnBack))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -228,7 +272,7 @@ public class ConfirmRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
@@ -276,12 +320,15 @@ public class ConfirmRegistration extends javax.swing.JFrame {
         txtClinicName.setText(clinic.getName());
         txtRoom.setText(clinic.getRoom());
         txtType.setText(clinic.getType());
+        doctorName.setText(clinic.getExamination().getDoctor().getDoctorName());
+        startTime.setText(clinic.getExamination().getStartTime());
+        endTime.setText(clinic.getExamination().getEndTime());
     }
     public void addRegistration() {
         try {
             MedicalRegister medicalRegister = new MedicalRegister(
-                patient.getId(),
-                clinic.getId()
+                patient,
+                clinic
             );
             MedicalRegisterController.getInstance().save(medicalRegister);
             JOptionPane.showMessageDialog(this, "Xác nhận thành công!", "", JOptionPane.INFORMATION_MESSAGE);
@@ -296,15 +343,21 @@ public class ConfirmRegistration extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConfirm;
+    private javax.swing.JLabel doctorName;
+    private javax.swing.JLabel endTime;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel startTime;
     private javax.swing.JLabel txtAddress;
     private javax.swing.JLabel txtAge;
     private javax.swing.JLabel txtClinicName;
